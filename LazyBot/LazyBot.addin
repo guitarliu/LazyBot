@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+	<AddIn Type="Application">
+		<Name>市政通</Name>
+		<Assembly>LazyBot.dll</Assembly>
+		<AddInId>3D40BF15-2043-4A45-B4B6-FA4BD7F8E1F9</AddInId>
+		<FullClassName>LazyBot.Application</FullClassName>
+		<VendorId>Jacobian Dev</VendorId>
+		<VendorDescription>https://github.com/MjMthimunye</VendorDescription>
+	</AddIn>
+</RevitAddIns>
