@@ -70,7 +70,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\jacobian.ico">
+    <Content Include="Icons\PipeLarge.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -83,6 +83,6 @@
   
 if exist "$(AppData)\Autodesk\REVIT\Addins\2018" copy "$(ProjectDir)*.addin" "$(AppData)\Autodesk\REVIT\Addins\2018"
 
-if exist "$(AppData)\Autodesk\REVIT\Addins\2018\Resources" copy "$(ProjectDir)\Resources\jacobian.ico" "$(AppData)\Autodesk\REVIT\Addins\2018\Resources"</PostBuildEvent>
+if exist "$(AppData)\Autodesk\REVIT\Addins\2018\Icons" copy "$(ProjectDir)\Icons\*.ico*" "$(AppData)\Autodesk\REVIT\Addins\2018\Icons"</PostBuildEvent>
   </PropertyGroup>
 </Project>

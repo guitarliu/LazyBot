@@ -21,7 +21,9 @@ namespace LazyBot
         public Result OnStartup(UIControlledApplication application)
         {
             string panelName = "管线综合";
+            string panelName1 = "管件统计";
             RibbonPanel panel = myRibbonPanel(application, panelName);
+            RibbonPanel panel1 = myRibbonPanel(application, panelName1);
             List<string> buttonInfo = new List<string>
             {
                 // button name and text
@@ -29,12 +31,24 @@ namespace LazyBot
                 // button command dll
                 "LazyBot.Command",
                 // button tooltip
-                "My First Plugin",
-                // button icon
-                "jacobian.ico"
+                "一键连接管道",
+                // button large icon
+                "PipeLarge.ico"
+            };
+            List<string> buttonInfo1 = new List<string>
+            {
+                // button name and text
+                "管件生成",
+                // button command dll
+                "LazyBot.Command",
+                // button tooltip
+                "一键生成管件",
+                // button large icon
+                "PipeLarge.ico"
             };
 
             myPushButton(application, panel, buttonInfo);
+            myPushButton(application, panel, buttonInfo1);
 
             return Result.Succeeded;
         }
@@ -80,8 +94,8 @@ namespace LazyBot
                 is PushButton button)
             {
                 button.ToolTip = buttonInfo[2];
-                Uri uri = new Uri(Path.Combine(Path.GetDirectoryName(thisAssemblyPath), "Resources", buttonInfo[3]));
-                button.LargeImage = new BitmapImage(uri);
+                Uri uriLargeImage = new Uri(Path.Combine(Path.GetDirectoryName(thisAssemblyPath), "Icons", buttonInfo[3]));
+                button.LargeImage = new BitmapImage(uriLargeImage);
             }
 
             return pushButton;
