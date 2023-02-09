@@ -20,11 +20,18 @@ namespace LazyBot
 
         public Result OnStartup(UIControlledApplication application)
         {
-            string panelName = "管线综合";
-            string panelName1 = "管件统计";
-            RibbonPanel panel = myRibbonPanel(application, panelName);
-            RibbonPanel panel1 = myRibbonPanel(application, panelName1);
-            List<string> buttonInfo = new List<string>
+            // Create RibbonPanel
+            string pipePanel = "管线综合";
+            string holePanel = "一键开洞";
+            string quantityPanel = "工程量统计";
+            string aboutPanel = "关于";
+            RibbonPanel rbpPipe = myRibbonPanel(application, pipePanel);
+            RibbonPanel rbpHole = myRibbonPanel(application, holePanel);
+            RibbonPanel rbpQuantity = myRibbonPanel(application, quantityPanel);
+            RibbonPanel rbpAbout = myRibbonPanel(application, aboutPanel);
+
+            // Create Pipe PushButton Information List
+            List<string> pipeLinkbtInfo = new List<string>
             {
                 // button name and text
                 "管线连接",
@@ -33,26 +40,117 @@ namespace LazyBot
                 // button tooltip
                 "一键连接管道",
                 // button large icon
-                "PipeLarge.ico"
+                "pipeLinkbtInfo.ico"
             };
-            List<string> buttonInfo1 = new List<string>
+            List<string> fittingTypeSelectbtInfo = new List<string>
             {
                 // button name and text
-                "管件生成",
+                "管件选型",
                 // button command dll
                 "LazyBot.Command",
                 // button tooltip
                 "一键生成管件",
                 // button large icon
-                "PipeLarge.ico"
+                "fittingTypeSelectbtInfo.ico"
             };
 
-            myPushButton(application, panel, buttonInfo);
-            myPushButton(application, panel, buttonInfo1);
+            // Create Hole PushButton Information List
+            List<string> holeCreatebtInfo = new List<string>
+            {
+                // button name and text
+                "一键开洞",
+                // button command dll
+                "LazyBot.Command",
+                // button tooltip
+                "选中管道一键开洞",
+                // button large icon
+                "holeCreatebtInfo.ico"
+            };
+            List<string> holeSleeveSelectbtInfo = new List<string>
+            {
+                // button name and text
+                "套管加装",
+                // button command dll
+                "LazyBot.Command",
+                // button tooltip
+                "选中管道生成套管",
+                // button large icon
+                "holeSleeveSelectbtInfo.ico"
+            };
+
+            // Create Quantity PushButton Information List
+            List<string> quantityTablebtInfo = new List<string>
+            {
+                // button name and text
+                "工程量表",
+                // button command dll
+                "LazyBot.Command",
+                // button tooltip
+                "选中对象生成工程量表",
+                // button large icon
+                "quantityTablebtInfo.ico"
+            };
+            List<string> costCalculatebtInfo = new List<string>
+            {
+                // button name and text
+                "造价表",
+                // button command dll
+                "LazyBot.Command",
+                // button tooltip
+                "根据单价一键生成造价表",
+                // button large icon
+                "costCalculatebtInfo.ico"
+            };
+
+            // Create About PushButton Information List
+            List<string> helpbtInfo = new List<string>
+            {
+                // button name and text
+                "帮助",
+                // button command dll
+                "LazyBot.Command",
+                // button tooltip
+                "帮助",
+                // button large icon
+                "helpbtInfo.ico"
+            };
+            List<string> aboutbtInfo = new List<string>
+            {
+                // button name and text
+                "关于",
+                // button command dll
+                "LazyBot.Command",
+                // button tooltip
+                "关于",
+                // button large icon
+                "aboutbtInfo.ico"
+            };
+
+            // Create Pipe PushButton
+            myPushButton(application, rbpPipe, pipeLinkbtInfo);
+            myPushButton(application, rbpPipe, fittingTypeSelectbtInfo);
+
+            // Create Hole PushButton
+            myPushButton(application, rbpHole, holeCreatebtInfo);
+            myPushButton(application, rbpHole, holeSleeveSelectbtInfo);
+
+            // Create Quantity PushButton
+            myPushButton(application, rbpQuantity, quantityTablebtInfo);
+            myPushButton(application, rbpQuantity, costCalculatebtInfo);
+
+            // Create About PushButton
+            myPushButton(application, rbpAbout, helpbtInfo);
+            myPushButton(application, rbpAbout, aboutbtInfo);
 
             return Result.Succeeded;
         }
 
+        /// <summary>
+        /// Create RibbonPanel
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="panelName"></param>
+        /// <returns></returns>
         public RibbonPanel myRibbonPanel(UIControlledApplication a, string panelName)
         {
             string tabName = "市政通";
@@ -84,6 +182,13 @@ namespace LazyBot
             return ribbonPanel;
         }
 
+        /// <summary>
+        /// Create PushButton 
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="panel"></param>
+        /// <param name="buttonInfo"></param>
+        /// <returns></returns>
         public PushButton myPushButton(UIControlledApplication a, RibbonPanel panel, List<string> buttonInfo)
         {
             PushButton pushButton= null;
