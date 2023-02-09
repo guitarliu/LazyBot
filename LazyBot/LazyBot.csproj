@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="RevitAPI">
       <HintPath>D:\Program Files\Autodesk\Revit 2018\RevitAPI.dll</HintPath>
       <Private>False</Private>
@@ -54,6 +55,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -65,6 +67,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Application.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,9 +78,20 @@
     <None Include="LazyBot.addin" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Icons\holeCreatebtInfo.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Icons\aboutbtInfo.ico" />
+    <Content Include="Icons\costCalculatebtInfo.ico" />
+    <Content Include="Icons\fittingTypeSelectbtInfo.ico" />
+    <Content Include="Icons\helpbtInfo.ico" />
+    <Content Include="Icons\holeCreatebtInfo.ico" />
+    <Content Include="Icons\pipeLinkbtInfo.ico" />
+    <Content Include="Icons\holeSleeveSelectbtInfo.ico" />
+    <Content Include="Icons\quantityTablebtInfo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="AboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

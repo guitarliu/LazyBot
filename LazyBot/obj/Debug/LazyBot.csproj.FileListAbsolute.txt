@@ -1,7 +1,11 @@
-C:\Users\liuyong\Desktop\LazyBot\LazyBot\bin\Debug\Icons\PipeLarge.ico
 C:\Users\liuyong\Desktop\LazyBot\LazyBot\bin\Debug\LazyBot.dll
 C:\Users\liuyong\Desktop\LazyBot\LazyBot\bin\Debug\LazyBot.pdb
 C:\Users\liuyong\Desktop\LazyBot\LazyBot\obj\Debug\LazyBot.csproj.AssemblyReference.cache
 C:\Users\liuyong\Desktop\LazyBot\LazyBot\obj\Debug\LazyBot.csproj.CoreCompileInputs.cache
 C:\Users\liuyong\Desktop\LazyBot\LazyBot\obj\Debug\LazyBot.dll
 C:\Users\liuyong\Desktop\LazyBot\LazyBot\obj\Debug\LazyBot.pdb
+C:\Users\liuyong\Desktop\LazyBot\LazyBot\obj\Debug\AboutWindow.g.cs
+C:\Users\liuyong\Desktop\LazyBot\LazyBot\obj\Debug\LazyBot_MarkupCompile.cache
+C:\Users\liuyong\Desktop\LazyBot\LazyBot\obj\Debug\LazyBot_MarkupCompile.lref
+C:\Users\liuyong\Desktop\LazyBot\LazyBot\obj\Debug\AboutWindow.baml
+C:\Users\liuyong\Desktop\LazyBot\LazyBot\obj\Debug\LazyBot.g.resources

@@ -119,7 +119,7 @@ namespace LazyBot
                 // button name and text
                 "关于",
                 // button command dll
-                "LazyBot.Command",
+                "LazyBot.AboutCommand",
                 // button tooltip
                 "关于",
                 // button large icon
