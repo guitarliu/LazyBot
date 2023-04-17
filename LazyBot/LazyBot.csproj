@@ -34,23 +34,23 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="RevitAPI">
-      <HintPath>..\..\..\..\..\ProgramSoftWare\Autodesk\Revit 2018\RevitAPI.dll</HintPath>
+      <HintPath>D:\Program Files\Autodesk\Revit 2018\RevitAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIIFC">
-      <HintPath>..\..\..\..\..\ProgramSoftWare\Autodesk\Revit 2018\RevitAPIIFC.dll</HintPath>
+      <HintPath>D:\Program Files\Autodesk\Revit 2018\RevitAPIIFC.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIMacros">
-      <HintPath>..\..\..\..\..\ProgramSoftWare\Autodesk\Revit 2018\RevitAPIMacros.dll</HintPath>
+      <HintPath>D:\Program Files\Autodesk\Revit 2018\RevitAPIMacros.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI">
-      <HintPath>..\..\..\..\..\ProgramSoftWare\Autodesk\Revit 2018\RevitAPIUI.dll</HintPath>
+      <HintPath>D:\Program Files\Autodesk\Revit 2018\RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUIMacros">
-      <HintPath>..\..\..\..\..\ProgramSoftWare\Autodesk\Revit 2018\RevitAPIUIMacros.dll</HintPath>
+      <HintPath>D:\Program Files\Autodesk\Revit 2018\RevitAPIUIMacros.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />

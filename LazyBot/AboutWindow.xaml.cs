@@ -39,7 +39,12 @@ namespace LazyBot
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Bt_Minimum_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void Bt_Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
