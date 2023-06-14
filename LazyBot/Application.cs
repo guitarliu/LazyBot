@@ -24,10 +24,12 @@ namespace LazyBot
             string pipePanel = "管线综合";
             string holePanel = "一键开洞";
             string quantityPanel = "工程量统计";
+            string databasePanel = "数据库查询";
             string aboutPanel = "关于";
             RibbonPanel rbpPipe = myRibbonPanel(application, pipePanel);
             RibbonPanel rbpHole = myRibbonPanel(application, holePanel);
             RibbonPanel rbpQuantity = myRibbonPanel(application, quantityPanel);
+            RibbonPanel rbpDatabase = myRibbonPanel(application, databasePanel);
             RibbonPanel rbpAbout = myRibbonPanel(application, aboutPanel);
 
             // Create Pipe PushButton Information List
@@ -102,6 +104,30 @@ namespace LazyBot
                 "costCalculatebtInfo.ico"
             };
 
+            // Create Database Search PushButton Information List
+            List<string> PipeDimensionbtInfo = new List<string>
+            {
+                // button name and text
+                "钢管尺寸",
+                // button command dll
+                "LazyBot.PipeDimSearchCommand",
+                // button tooltip
+                "查询特定直径钢管的外径、壁厚",
+                // button large icon
+                "PipeDimensionbtInfo.ico"
+            };
+            List<string> PipeFittingWeightbtInfo = new List<string>
+            {
+                // button name and text
+                "钢管重量",
+                // button command dll
+                "LazyBot.Command",
+                // button tooltip
+                "02S403、02S404图集钢制管件重量查询",
+                // button large icon
+                "PipeFittingWeightbtInfo.ico"
+            };
+
             // Create About PushButton Information List
             List<string> helpbtInfo = new List<string>
             {
@@ -137,6 +163,10 @@ namespace LazyBot
             // Create Quantity PushButton
             myPushButton(application, rbpQuantity, quantityTablebtInfo);
             myPushButton(application, rbpQuantity, costCalculatebtInfo);
+
+            // Create Database Search PushButton
+            myPushButton(application, rbpDatabase, PipeDimensionbtInfo);
+            myPushButton(application, rbpDatabase, PipeFittingWeightbtInfo);
 
             // Create About PushButton
             myPushButton(application, rbpAbout, helpbtInfo);

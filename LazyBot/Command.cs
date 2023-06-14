@@ -25,12 +25,24 @@ namespace LazyBot
     }
 
     [Transaction(TransactionMode.Manual)]
+    internal class PipeDimSearchCommand : IExternalCommand
+    {
+        public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
+        {
+            PipeDimensionSearch pipeDimensionSearch = new PipeDimensionSearch();
+            pipeDimensionSearch.Show();
+
+            return Result.Succeeded;
+        }
+    }
+
+    [Transaction(TransactionMode.Manual)]
     internal class AboutCommand : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
             AboutWindow aboutWindow = new AboutWindow(commandData.Application);
-            aboutWindow.Show();
+            aboutWindow.ShowDialog();
 
             return Result.Succeeded;
         }

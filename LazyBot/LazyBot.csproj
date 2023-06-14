@@ -72,6 +72,9 @@
     </Compile>
     <Compile Include="Application.cs" />
     <Compile Include="Command.cs" />
+    <Compile Include="PipeDimensionSearch.xaml.cs">
+      <DependentUpon>PipeDimensionSearch.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +96,12 @@
     <Content Include="Icons\holeCreatebtInfo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Icons\PipeDimensionbtinfo.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\PipeFittingWeightbtInfo.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icons\pipeLinkbtInfo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -105,6 +114,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="AboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PipeDimensionSearch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
