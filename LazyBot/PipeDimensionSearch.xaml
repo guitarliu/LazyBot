@@ -53,7 +53,7 @@
                        Margin="120,10,0,0" VerticalContentAlignment="Center"
                        HorizontalContentAlignment="Center"/>
                 <Border 
-                    Background="#4764A0" BorderThickness="0.5" 
+                    Background="#8e44ad" BorderThickness="0.5" 
                     CornerRadius="8" Width="80" Height="25"
                     VerticalAlignment="Top" HorizontalAlignment="Left"
                     Margin="120,40,0,0">
@@ -101,9 +101,9 @@
             </Grid>
             <Grid Grid.Row="2">
                 <GridSplitter Background="Transparent" BorderBrush="Gray" BorderThickness="0,0,0,1" IsEnabled="False" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
-                <Border Background="#1565C0" CornerRadius="10" VerticalAlignment="Center" HorizontalAlignment="Center" Width="80" Height="25">
+                <Border Background="#A770EF" CornerRadius="10" VerticalAlignment="Center" HorizontalAlignment="Center" Width="80" Height="25">
                     <Button x:Name="BtWrite" VerticalAlignment="Center" HorizontalAlignment="Center" Width="60" Height="25" Background="Transparent" BorderThickness="0" Foreground="Black">
-                        <TextBlock Text="写 入" Foreground="#FFFFFF" FontSize="15" FontStyle="Italic"/>
+                        <TextBlock Text="写 入" FontSize="15" FontStyle="Italic"/>
                     </Button>
                 </Border>
             </Grid>
