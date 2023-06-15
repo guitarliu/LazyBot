@@ -1,14 +1,10 @@
 ﻿using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Autodesk.Revit.UI.Events;
 using Autodesk.Revit.Attributes;
-using Autodesk.Revit.UI.Macros;
+using Autodesk.Revit.DB.Architecture;
+using System.Windows.Controls;
+using System;
 
 namespace LazyBot
 {
@@ -44,6 +40,37 @@ namespace LazyBot
             AboutWindow aboutWindow = new AboutWindow(commandData.Application);
             aboutWindow.ShowDialog();
 
+            return Result.Succeeded;
+        }
+    }
+    internal class WriteTextNoteCommand : IExternalCommand
+    {
+        public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
+        {
+            UIDocument uiDoc = commandData.Application.ActiveUIDocument;
+            Document doc = uiDoc.Document;
+
+            using (Transaction transaction = new Transaction(doc, "Creating TextNote"))
+            {
+                // To create TextNote, a transaction must be first started
+                if (transaction.Start() == TransactionStatus.Started)
+                {
+                    // Create TextNote
+                    XYZ textLoc = uiDoc.Selection.PickPoint("Pick a point for Writing text.");
+                    ElementId defaultTextTypeId = doc.GetDefaultElementTypeId(ElementTypeGroup.TextNoteType);
+
+                    TextNoteOptions opts = new TextNoteOptions(defaultTextTypeId);
+                    TextNote textNote = TextNote.Create(doc, doc.ActiveView.Id, textLoc, "New sample text", opts);
+
+                    // the transaction must be committed before you can
+                    // get the value of TextNote.
+                    if (transaction.Commit() == TransactionStatus.Committed)
+                    {
+                        // throw null;
+                    }
+                }
+
+            }
             return Result.Succeeded;
         }
     }

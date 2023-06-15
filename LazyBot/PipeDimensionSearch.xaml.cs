@@ -1,17 +1,10 @@
-﻿using System;
+﻿using Autodesk.Revit.DB;
+using Autodesk.Revit.UI;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace LazyBot
 {
@@ -82,12 +75,16 @@ namespace LazyBot
                 Tbx_Pipe_D.Text = PipeDiameterDict[double.Parse(Tbx_Pipe_DN.Text)][0].ToString();
                 Tbx_Pipe_WT.Text = PipeDiameterDict[double.Parse(Tbx_Pipe_DN.Text)][1].ToString();
             }
-            catch 
+            catch
             {
                 Tbx_Pipe_D.Text = "0";
                 Tbx_Pipe_WT.Text = "0";
             }
             Tbx_Chg_DxWT.Text = $"D{Tbx_Pipe_D.Text}x{Tbx_Pipe_WT.Text}";
+        }
+        private void BtWrite_Click(object sender, RoutedEventArgs e)
+        {
+            WriteTextNoteCommand writeTextNoteCommand = new WriteTextNoteCommand();
         }
     }
 }

@@ -102,7 +102,7 @@
             <Grid Grid.Row="2">
                 <GridSplitter Background="Transparent" BorderBrush="Gray" BorderThickness="0,0,0,1" IsEnabled="False" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
                 <Border Background="#A770EF" CornerRadius="10" VerticalAlignment="Center" HorizontalAlignment="Center" Width="80" Height="25">
-                    <Button x:Name="BtWrite" VerticalAlignment="Center" HorizontalAlignment="Center" Width="60" Height="25" Background="Transparent" BorderThickness="0" Foreground="Black">
+                    <Button x:Name="BtWrite" VerticalAlignment="Center" HorizontalAlignment="Center" Width="60" Height="25" Background="Transparent" BorderThickness="0" Foreground="Black" Click="BtWrite_Click">
                         <TextBlock Text="写 入" FontSize="15" FontStyle="Italic"/>
                     </Button>
                 </Border>
