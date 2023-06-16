@@ -42,9 +42,15 @@ namespace LazyBot
             { 2400, new List<double>{ 2420, 20} },
             { 2600, new List<double>{ 2620, 20} }
         };
+        private ExternalEvent m_ExEvent;
+        private WriteTextNoteEvent m_Handler;
         public PipeDimensionSearch()
         {
             InitializeComponent();
+
+            // Create Event while Initialize This Window
+            m_Handler = new WriteTextNoteEvent();
+            m_ExEvent = ExternalEvent.Create(m_Handler);
         }
 
         private void DragWindow(object sender, MouseButtonEventArgs e)
@@ -84,7 +90,8 @@ namespace LazyBot
         }
         private void BtWrite_Click(object sender, RoutedEventArgs e)
         {
-            WriteTextNoteCommand writeTextNoteCommand = new WriteTextNoteCommand();
+            m_Handler.gettext = Tbx_Chg_DxWT.Text;
+            m_ExEvent.Raise();
         }
     }
 }

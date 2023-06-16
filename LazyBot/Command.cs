@@ -23,11 +23,18 @@ namespace LazyBot
     [Transaction(TransactionMode.Manual)]
     internal class PipeDimSearchCommand : IExternalCommand
     {
+        // ModelessWimdow instance
+        internal PipeDimensionSearch PipeDimSearchWindow;
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            PipeDimensionSearch pipeDimensionSearch = new PipeDimensionSearch();
-            pipeDimensionSearch.Show();
-
+            // If we do not have a dialog yet, create and show it
+            if (PipeDimSearchWindow == null || !PipeDimSearchWindow.IsVisible)
+            {
+                // We Give the objects to the new dialog;
+                // The dialog becomes the owner responsible for disposing them, eventually.
+                PipeDimensionSearch pipeDimensionSearch = new PipeDimensionSearch();
+                pipeDimensionSearch.Show();
+            }
             return Result.Succeeded;
         }
     }
@@ -43,13 +50,14 @@ namespace LazyBot
             return Result.Succeeded;
         }
     }
-    internal class WriteTextNoteCommand : IExternalCommand
-    {
-        public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
-        {
-            UIDocument uiDoc = commandData.Application.ActiveUIDocument;
-            Document doc = uiDoc.Document;
 
+    public class WriteTextNoteEvent : IExternalEventHandler
+    {
+        public string gettext { get; set; }
+        public void Execute(UIApplication app)
+        {
+            UIDocument uiDoc = app.ActiveUIDocument;
+            Document doc = uiDoc.Document;
             using (Transaction transaction = new Transaction(doc, "Creating TextNote"))
             {
                 // To create TextNote, a transaction must be first started
@@ -60,7 +68,8 @@ namespace LazyBot
                     ElementId defaultTextTypeId = doc.GetDefaultElementTypeId(ElementTypeGroup.TextNoteType);
 
                     TextNoteOptions opts = new TextNoteOptions(defaultTextTypeId);
-                    TextNote textNote = TextNote.Create(doc, doc.ActiveView.Id, textLoc, "New sample text", opts);
+
+                    TextNote textNote = TextNote.Create(doc, doc.ActiveView.Id, textLoc, gettext, opts);
 
                     // the transaction must be committed before you can
                     // get the value of TextNote.
@@ -69,9 +78,12 @@ namespace LazyBot
                         // throw null;
                     }
                 }
-
             }
-            return Result.Succeeded;
+        }
+
+        public string GetName()
+        {
+            return "写入 TextNote 文本";
         }
     }
 }
