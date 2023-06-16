@@ -51,10 +51,12 @@ C:\Users\xwlva\Desktop\LazyBot\LazyBot\bin\Debug\LazyBot.pdb
 C:\Users\xwlva\Desktop\LazyBot\LazyBot\obj\Debug\LazyBot.csproj.AssemblyReference.cache
 C:\Users\xwlva\Desktop\LazyBot\LazyBot\obj\Debug\AboutWindow.g.cs
 C:\Users\xwlva\Desktop\LazyBot\LazyBot\obj\Debug\PipeDimensionSearch.g.cs
+C:\Users\xwlva\Desktop\LazyBot\LazyBot\obj\Debug\PipeFittingWeightSearch.g.cs
 C:\Users\xwlva\Desktop\LazyBot\LazyBot\obj\Debug\LazyBot_MarkupCompile.cache
 C:\Users\xwlva\Desktop\LazyBot\LazyBot\obj\Debug\LazyBot_MarkupCompile.lref
 C:\Users\xwlva\Desktop\LazyBot\LazyBot\obj\Debug\AboutWindow.baml
 C:\Users\xwlva\Desktop\LazyBot\LazyBot\obj\Debug\PipeDimensionSearch.baml
+C:\Users\xwlva\Desktop\LazyBot\LazyBot\obj\Debug\PipeFittingWeightSearch.baml
 C:\Users\xwlva\Desktop\LazyBot\LazyBot\obj\Debug\LazyBot.g.resources
 C:\Users\xwlva\Desktop\LazyBot\LazyBot\obj\Debug\LazyBot.csproj.CoreCompileInputs.cache
 C:\Users\xwlva\Desktop\LazyBot\LazyBot\obj\Debug\LazyBot.dll

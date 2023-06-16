@@ -24,8 +24,8 @@
             </Grid.RowDefinitions>
             <GridSplitter Background="Transparent" BorderBrush="Gray" BorderThickness="0,0,0,0.5" IsEnabled="False" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"/>
             <Grid Grid.Row="0">
-                <Image x:Name="PipeDimSearchInfoImg" Source="Icons/PipeDimensionbtinfo.ico" Width="20" Height="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,6,0,0"/>
-                <Label Content="钢制管件直径、外径、壁厚查询" Background="Transparent" FontSize="10" Margin="25,2,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Image x:Name="PipeDimSearchInfoImg" Source="Icons/PipeDimensionbtinfo.ico" Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,6,0,0"/>
+                <Label Content="钢制管件尺寸、壁厚查询" Background="Transparent" FontSize="12" Margin="25,2,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                 <Button x:Name="MinMumBt" Content="—" FontSize="8" Background="Transparent" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,40,0" Width="30" Height="30" Click="MinMumBt_Click"/>
                 <Button x:Name="CloseBt" Content="✕" FontSize="10" Background="Transparent" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,10,0" Width="30" Height="30" Click="CloseBt_Click"/>
             </Grid>

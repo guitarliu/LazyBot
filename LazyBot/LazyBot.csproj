@@ -75,9 +75,13 @@
     <Compile Include="PipeDimensionSearch.xaml.cs">
       <DependentUpon>PipeDimensionSearch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PipeFittingWeightSearch.xaml.cs">
+      <DependentUpon>PipeFittingWeightSearch.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Database\PipeDiameter.db" />
     <None Include="LazyBot.addin" />
   </ItemGroup>
   <ItemGroup>
@@ -121,7 +125,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PipeFittingWeightSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>Copy "$(TargetDir)LazyBot.dll" "$(AppData)\Autodesk\Revit\Addins\2018"

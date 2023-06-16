@@ -121,7 +121,7 @@ namespace LazyBot
                 // button name and text
                 "钢管重量",
                 // button command dll
-                "LazyBot.Command",
+                "LazyBot.PipeFtWghtSearchCommand",
                 // button tooltip
                 "02S403、02S404图集钢制管件重量查询",
                 // button large icon

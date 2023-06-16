@@ -40,6 +40,25 @@ namespace LazyBot
     }
 
     [Transaction(TransactionMode.Manual)]
+    internal class PipeFtWghtSearchCommand : IExternalCommand
+    {
+        // ModelessWimdow instance
+        internal PipeFittingWeightSearch PipeFtWghtSearchWindow;
+        public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
+        {
+            // If we do not have a dialog yet, create and show it
+            if (PipeFtWghtSearchWindow == null || !PipeFtWghtSearchWindow.IsVisible)
+            {
+                // We Give the objects to the new dialog;
+                // The dialog becomes the owner responsible for disposing them, eventually.
+                PipeFittingWeightSearch pipeFittingWeightSearch = new PipeFittingWeightSearch();
+                pipeFittingWeightSearch.Show();
+            }
+            return Result.Succeeded;
+        }
+    }
+
+    [Transaction(TransactionMode.Manual)]
     internal class AboutCommand : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)

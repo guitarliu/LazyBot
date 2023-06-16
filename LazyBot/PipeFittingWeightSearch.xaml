@@ -1,0 +1,65 @@
+﻿<Window x:Class="LazyBot.PipeFittingWeightSearch"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LazyBot"
+             mc:Ignorable="d" 
+             Height="480" Width="600"
+            Background="Transparent"
+            BorderBrush="Transparent"
+            BorderThickness="0"
+            AllowDrop="True"
+            AllowsTransparency="True"
+            WindowStartupLocation="CenterScreen"
+            WindowStyle="None"
+            ResizeMode="CanResizeWithGrip"
+            MouseLeftButtonDown="DragWindow">
+    <Border Background="WhiteSmoke" CornerRadius="15">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <GridSplitter Background="Transparent" BorderBrush="Gray" BorderThickness="0,0,0,0.5" IsEnabled="False" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"/>
+            <Grid Grid.Row="0">
+                <Image x:Name="AboutInfoImg" Source="Icons/PipeFittingWeightbtInfo.ico" Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,6,0,0"/>
+                <Label Content="钢制管件重量查询" Background="Transparent" FontSize="12" Margin="30,2,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Button x:Name="MinMumBt" Content="—" FontSize="8" Background="Transparent" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,40,0" Width="30" Height="30" Click="MinMumBt_Click"/>
+                <Button x:Name="CloseBt" Content="✕" FontSize="10" Background="Transparent" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,10,0" Width="30" Height="30" Click="CloseBt_Click"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <DataGrid x:Name="xPipeStandard" d:ItemsSource="{d:SampleData ItemCount=20}" Height="400" VerticalAlignment="Top" Margin="10,36,10,0" AllowDrop="True" SelectionMode="Extended" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" IsReadOnly="True" SelectionChanged="xPipeStandard_SelectionChanged">
+                    <DataGrid.Resources>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                            <Setter Property="Background" Value="LightSkyBlue"/>
+                            <Setter Property="Focusable" Value="True"/>
+                        </Style>
+                        <Style x:Key="ContentCenterStyle" TargetType="{x:Type TextBlock}">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="名称" Binding="{Binding pStName}" Width="100" IsReadOnly="False" ElementStyle="{StaticResource ContentCenterStyle}"/>
+                        <DataGridTextColumn Header="DN" Binding="{Binding pStDN}" Width ="50" IsReadOnly="False" ElementStyle="{StaticResource ContentCenterStyle}"/>
+                        <DataGridTextColumn Header="DN1" Binding="{Binding pStDN1}" Width ="50" IsReadOnly="False" ElementStyle="{StaticResource ContentCenterStyle}"/>
+                        <DataGridTextColumn Header="D" Binding="{Binding pStD}" Width ="50" IsReadOnly="False" ElementStyle="{StaticResource ContentCenterStyle}"/>
+                        <DataGridTextColumn Header="D1" Binding="{Binding pStD1}" Width ="50" IsReadOnly="False" ElementStyle="{StaticResource ContentCenterStyle}"/>
+                        <DataGridTextColumn Header="壁厚Wt" Binding="{Binding pStWt}" Width ="60" IsReadOnly="False" ElementStyle="{StaticResource ContentCenterStyle}"/>
+                        <DataGridTextColumn Header="壁厚Wt1" Binding="{Binding pStWt1}" Width ="70" IsReadOnly="False" ElementStyle="{StaticResource ContentCenterStyle}"/>
+                        <DataGridTextColumn Header="重量" Binding="{Binding pStWeight}" Width ="60" IsReadOnly="False" ElementStyle="{StaticResource ContentCenterStyle}"/>
+                        <DataGridTextColumn Header="页码" Binding="{Binding pStPage}" Width ="*" IsReadOnly="False" ElementStyle="{StaticResource ContentCenterStyle}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <TextBox x:Name="TbPipeDiameter" HorizontalAlignment="Left" Height="20" Margin="239,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="59" Text="" TextChanged="TbPipeDiameter_TextChanged"/>
+                <Label x:Name="LblTypeName" Content="名称：" HorizontalAlignment="Left" Height="23" Margin="14,8,0,0" VerticalAlignment="Top" Width="38"/>
+                <ComboBox x:Name="CmbxTypeName" HorizontalAlignment="Left" Height="20" Margin="52,10,0,0" VerticalAlignment="Top" Width="108" IsReadOnly="False" IsEditable="True" SelectionChanged="CmbxTypeName_SelectionChanged"/>
+                <Label x:Name="LblPipeDiameter" Content="管径：" HorizontalAlignment="Left" Height="23" Margin="200,8,0,0" VerticalAlignment="Top" Width="38"/>
+                <Label x:Name="LblDescription" Content="重量单位kg，其余尺寸单位均为mm。" HorizontalAlignment="Left" Margin="338,7,0,0" VerticalAlignment="Top" Width="239" FontWeight="Bold" FontStyle="Italic"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
