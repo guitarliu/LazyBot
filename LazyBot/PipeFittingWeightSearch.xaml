@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LazyBot"
              mc:Ignorable="d" 
-             Height="480" Width="600"
+             Height="500" Width="600"
             Background="Transparent"
             BorderBrush="Transparent"
             BorderThickness="0"
@@ -29,13 +29,20 @@
                 <Button x:Name="CloseBt" Content="✕" FontSize="10" Background="Transparent" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,10,0" Width="30" Height="30" Click="CloseBt_Click"/>
             </Grid>
             <Grid Grid.Row="1">
-                <DataGrid x:Name="xPipeStandard" d:ItemsSource="{d:SampleData ItemCount=20}" Height="400" VerticalAlignment="Top" Margin="10,36,10,0" AllowDrop="True" SelectionMode="Extended" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" IsReadOnly="True" SelectionChanged="xPipeStandard_SelectionChanged">
+                <DataGrid x:Name="xPipeStandard" d:ItemsSource="{d:SampleData ItemCount=20}" 
+                          Height="410" VerticalAlignment="Top" Margin="10,40,10,0" AllowDrop="True"
+                          SelectionMode="Extended" HorizontalScrollBarVisibility="Auto" 
+                          VerticalScrollBarVisibility="Auto" IsReadOnly="True" BorderThickness="0"
+                          BorderBrush="Transparent"  GridLinesVisibility="Horizontal"
+                          SelectionChanged="xPipeStandard_SelectionChanged">
                     <DataGrid.Resources>
                         <Style TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
                             <Setter Property="VerticalContentAlignment" Value="Center"/>
-                            <Setter Property="Background" Value="LightSkyBlue"/>
+                            <Setter Property="Background" Value="LightGray"/>
+                            <Setter Property="Height" Value="25"/>
                             <Setter Property="Focusable" Value="True"/>
+                            <Setter Property="FontSize" Value="12"/>
                         </Style>
                         <Style x:Key="ContentCenterStyle" TargetType="{x:Type TextBlock}">
                             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -55,7 +62,7 @@
                     </DataGrid.Columns>
                 </DataGrid>
                 <TextBox x:Name="TbPipeDiameter" HorizontalAlignment="Left" Height="20" Margin="239,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="59" Text="" TextChanged="TbPipeDiameter_TextChanged"/>
-                <Label x:Name="LblTypeName" Content="名称：" HorizontalAlignment="Left" Height="23" Margin="14,8,0,0" VerticalAlignment="Top" Width="38"/>
+                <Label x:Name="LblTypeName" Content="名称：" HorizontalAlignment="Left" Height="25" Margin="14,8,0,0" VerticalAlignment="Top" Width="38"/>
                 <ComboBox x:Name="CmbxTypeName" HorizontalAlignment="Left" Height="20" Margin="52,10,0,0" VerticalAlignment="Top" Width="108" IsReadOnly="False" IsEditable="True" SelectionChanged="CmbxTypeName_SelectionChanged"/>
                 <Label x:Name="LblPipeDiameter" Content="管径：" HorizontalAlignment="Left" Height="23" Margin="200,8,0,0" VerticalAlignment="Top" Width="38"/>
                 <Label x:Name="LblDescription" Content="重量单位kg，其余尺寸单位均为mm。" HorizontalAlignment="Left" Margin="338,7,0,0" VerticalAlignment="Top" Width="239" FontWeight="Bold" FontStyle="Italic"/>
