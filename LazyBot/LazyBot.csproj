@@ -34,23 +34,23 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="RevitAPI">
-      <HintPath>D:\Program Files\Autodesk\Revit 2018\RevitAPI.dll</HintPath>
+      <HintPath>..\..\..\..\..\ProgramSoftWare\Autodesk\Revit 2018\RevitAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIIFC">
-      <HintPath>D:\Program Files\Autodesk\Revit 2018\RevitAPIIFC.dll</HintPath>
+      <HintPath>..\..\..\..\..\ProgramSoftWare\Autodesk\Revit 2018\RevitAPIIFC.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIMacros">
-      <HintPath>D:\Program Files\Autodesk\Revit 2018\RevitAPIMacros.dll</HintPath>
+      <HintPath>..\..\..\..\..\ProgramSoftWare\Autodesk\Revit 2018\RevitAPIMacros.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI">
-      <HintPath>D:\Program Files\Autodesk\Revit 2018\RevitAPIUI.dll</HintPath>
+      <HintPath>..\..\..\..\..\ProgramSoftWare\Autodesk\Revit 2018\RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUIMacros">
-      <HintPath>D:\Program Files\Autodesk\Revit 2018\RevitAPIUIMacros.dll</HintPath>
+      <HintPath>..\..\..\..\..\ProgramSoftWare\Autodesk\Revit 2018\RevitAPIUIMacros.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -85,36 +85,36 @@
     <None Include="LazyBot.addin" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Icons\aboutbtInfo.ico">
+    <Resource Include="Icons\aboutbtInfo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Icons\costCalculatebtInfo.ico">
+    </Resource>
+    <Resource Include="Icons\costCalculatebtInfo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Icons\fittingTypeSelectbtInfo.ico">
+    </Resource>
+    <Resource Include="Icons\fittingTypeSelectbtInfo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Icons\helpbtInfo.ico">
+    </Resource>
+    <Resource Include="Icons\helpbtInfo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Icons\holeCreatebtInfo.ico">
+    </Resource>
+    <Resource Include="Icons\holeCreatebtInfo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Icons\PipeDimensionbtinfo.ico">
+    </Resource>
+    <Resource Include="Icons\PipeDimensionbtinfo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Icons\PipeFittingWeightbtInfo.ico">
+    </Resource>
+    <Resource Include="Icons\PipeFittingWeightbtInfo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Icons\pipeLinkbtInfo.ico">
+    </Resource>
+    <Resource Include="Icons\pipeLinkbtInfo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Icons\holeSleeveSelectbtInfo.ico">
+    </Resource>
+    <Resource Include="Icons\holeSleeveSelectbtInfo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Icons\quantityTablebtInfo.ico">
+    </Resource>
+    <Resource Include="Icons\quantityTablebtInfo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Page Include="AboutWindow.xaml">
