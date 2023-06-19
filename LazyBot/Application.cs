@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Reflection;
 using System.Windows.Media.Imaging;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 
 namespace LazyBot
 {
@@ -86,11 +87,33 @@ namespace LazyBot
                 // button name and text
                 "工程量表",
                 // button command dll
-                "LazyBot.Command",
+                "Null",
                 // button tooltip
-                "选中对象生成工程量表",
+                "选中对象生成工程量表，包括设备、管道、管件及管道附件等",
                 // button large icon
                 "quantityTablebtInfo.ico"
+            };
+            List<string> EqPpAcesquantityTablebtInfo = new List<string>
+            {
+                // button name and text
+                "设备附件数量表",
+                // button command dll
+                "LazyBot.Command",
+                // button tooltip
+                "选中对象生成工程量表，包括设备、管道附件",
+                // button large icon
+                "EqPpAcesquantityTablebtInfo.ico"
+            };
+            List<string> PpFtquantityTablebtInfo = new List<string>
+            {
+                // button name and text
+                "管件数量表",
+                // button command dll
+                "LazyBot.Command",
+                // button tooltip
+                "选中对象生成工程量表，包括管道、管件",
+                // button large icon
+                "PpFtquantityTablebtInfo.ico"
             };
             List<string> costCalculatebtInfo = new List<string>
             {
@@ -161,8 +184,13 @@ namespace LazyBot
             myPushButton(application, rbpHole, holeSleeveSelectbtInfo);
 
             // Create Quantity PushButton
-            myPushButton(application, rbpQuantity, quantityTablebtInfo);
+            // myPushButton(application, rbpQuantity, quantityTablebtInfo);
             myPushButton(application, rbpQuantity, costCalculatebtInfo);
+            List<List<string>> pulldownpushbuttonList = new List<List<string>> { 
+                EqPpAcesquantityTablebtInfo,
+                PpFtquantityTablebtInfo
+            };
+            mySplitButtonPushButton(application, rbpQuantity, quantityTablebtInfo, pulldownpushbuttonList);
 
             // Create Database Search PushButton
             myPushButton(application, rbpDatabase, PipeDimensionbtInfo);
@@ -234,6 +262,44 @@ namespace LazyBot
             }
 
             return pushButton;
+        }
+
+        public PulldownButton myPulldownButton(UIControlledApplication a, RibbonPanel panel, List<string> buttonInfo)
+        {
+            PulldownButton pulldownButton= null;
+            string thisAssemblyPath = Assembly.GetExecutingAssembly().Location;
+            if (panel.AddItem(new PulldownButtonData(buttonInfo[0], buttonInfo[0])) is PulldownButton pulldownbutton)
+            {
+                pulldownbutton.ToolTip= buttonInfo[2];
+                Uri uriLargeImage = new Uri(Path.Combine(Path.GetDirectoryName(thisAssemblyPath), "Icons", buttonInfo[3]));
+                pulldownbutton.LargeImage = new BitmapImage(uriLargeImage);
+            }
+
+            return pulldownButton;
+        }
+        public PushButton mySplitButtonPushButton(UIControlledApplication a, RibbonPanel panel, List<string> pulldownbuttonInfo, List<List<string>> pulldownpushbuttonInfoList)
+        {
+            PushButton splitbuttonPushButton = null;
+
+            string thisAssemblyPath = Assembly.GetExecutingAssembly().Location;
+            if (panel.AddItem(new SplitButtonData(pulldownbuttonInfo[0], pulldownbuttonInfo[0])) is SplitButton splitbutton)
+            {
+                splitbutton.ToolTip = pulldownbuttonInfo[2];
+                Uri uripldnbtLargeImage = new Uri(Path.Combine(Path.GetDirectoryName(thisAssemblyPath), "Icons", pulldownbuttonInfo[3]));
+                splitbutton.LargeImage = new BitmapImage(uripldnbtLargeImage);
+
+                foreach (List<string> pldnphbtInfolist in  pulldownpushbuttonInfoList) 
+                {
+                    if (splitbutton.AddPushButton(new PushButtonData(pldnphbtInfolist[0], pldnphbtInfolist[0], thisAssemblyPath, pldnphbtInfolist[1])) is PushButton button)
+                    {
+                        button.ToolTip = pldnphbtInfolist[2];
+                        Uri uripldnphbtLargeImage = new Uri(Path.Combine(Path.GetDirectoryName(thisAssemblyPath), "Icons", pldnphbtInfolist[3]));
+                        button.LargeImage = new BitmapImage(uripldnphbtLargeImage);
+                    }
+                }
+            }
+
+            return splitbuttonPushButton;
         }
     }
 }
